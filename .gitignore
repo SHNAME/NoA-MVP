@@ -1,0 +1,22 @@
+# IDE
+.idea/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+.myenv/
+
+# Vector DB / local database
+vector_db/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log

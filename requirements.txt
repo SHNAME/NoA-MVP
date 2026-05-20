@@ -1,0 +1,9 @@
+streamlit
+pandas
+requests
+openai
+sentence-transformers
+chromadb
+pdfplumber
+python-dotenv
+roboflow
