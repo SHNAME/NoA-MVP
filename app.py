@@ -165,7 +165,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### 🤖 AI 비서에게 물어보기")
 
-    if st.button("💬 해말금 AI 비서 호출", use_container_width=True):
+    if st.button("💬 김서방 호출", use_container_width=True):
         st.session_state.current_page = "chatbot"
          
     st.image("farmers.png", use_container_width=True)
