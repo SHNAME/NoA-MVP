@@ -1,5 +1,5 @@
 import streamlit as st
-from modules.ingest import ingest_docs  # 만약 ingest_docs 위치가 다르면 경로 맞춰주기
+from ingest import ingest_docs  # 만약 ingest_docs 위치가 다르면 경로 맞춰주기
 
 def show_chatbot_page(rag_service):
     """
