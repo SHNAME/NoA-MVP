@@ -110,7 +110,7 @@ class RagService:
 
         context = "\n\n".join(
             [
-                f"[출처: {doc['metadata'].get('source')}"
+                f"[출처: {doc['metadata'].get('source')}]\n{doc['content']}"
                 for doc in searched_docs
             ]
         )

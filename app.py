@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import base64
 from chatbot_page import show_chatbot_page
+from dryer_matching_page import show_dryer_matching_page
 import streamlit.components.v1 as components
 from modules.region_data_loader import load_region_code
 from modules.calculator import diagnose_with_capacity, diagnose_without_capacity
@@ -163,7 +164,7 @@ with st.sidebar:
          
     st.markdown("---")
     st.markdown("### 🤖 AI 비서에게 물어보기")
-    
+
     if st.button("💬 해말금 AI 비서 호출", use_container_width=True):
         st.session_state.current_page = "chatbot"
          
@@ -339,7 +340,23 @@ if st.session_state.current_page == "analyzer":
                         except Exception as e:
                             st.error(f"설명을 생성하는 중 오류가 발생했습니다: {e}")
 
+        st.markdown("<div style='margin-top:1.5rem;'></div>", unsafe_allow_html=True)
+        st.markdown(
+            "<p style='text-align:center;color:#888;font-size:0.9rem;margin-bottom:0.5rem;'>"
+            "분석 결과를 바탕으로 가까운 건조기·탈수기 업체에 견적을 받아보세요.</p>",
+            unsafe_allow_html=True,
+        )
+        if st.button("🏭 건조기 견적 상담받기", key="go_to_dryer_matching"):
+            st.session_state.current_page = "dryer_matching"
+            st.rerun()
+
 
 elif st.session_state.current_page == "chatbot":
-    show_chatbot_page(rag_service)                            
+    show_chatbot_page(rag_service)
+
+elif st.session_state.current_page == "dryer_matching":
+    show_dryer_matching_page(
+        st.session_state.get("analysis_results"),
+        st.session_state.get("user_inputs", {}),
+    )
 
