@@ -41,7 +41,7 @@ class RagService:
         return self.collection.count()
 
     #페이지 단위로 추출한 문자열을 줄 단위 chunk 여러 개로 분리
-    def split_text(self, text: str, chunk_size: int = 600, overlap_lines: int = 2):
+    def split_text(self, text: str, chunk_size: int = 600, overlap_lines: int = 4):
         lines = [l.strip() for l in text.splitlines() if l.strip()]
 
         chunks = []

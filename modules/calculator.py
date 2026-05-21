@@ -195,7 +195,7 @@ def calc_roi_months(
     if tier is None:
         return None
 
-    total_capex = (tier["machine_capex"] + tier["construction_capex"]) * 0.3
+    total_capex = (tier["machine_capex"] + tier["construction_capex"]) * 0.6
     return total_capex / monthly_saving
 
 
